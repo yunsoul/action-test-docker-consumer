@@ -14,4 +14,4 @@ jobs:
           mode: 'A'
       # Use the output from the `hello` step
       - name: Get the output
-        run: echo "The time was ${{ steps.hello.outputs.random-number }}"
+        run: echo "The time was ${{ steps.hello.outputs.result }}"
