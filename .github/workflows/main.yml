@@ -3,16 +3,16 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Spectra
     steps:
       - uses: actions/checkout@v3
-      - name: Hello world action step
-        id: hello
+      - name: Spectra action step
+        id: scan
         uses: yunsoul/action-test-docker-provider@v1.0
         with:
           target: '*.sol'
           mode: 'A'
-      # Use the output from the `hello` step
+      # Use the output from the `scan` step
       - name: Get the output
-        run: echo "The time was ${{ steps.hello.outputs.result }}"
+        run: echo "The time was ${{ steps.scan.outputs.scan-result }}"
 
