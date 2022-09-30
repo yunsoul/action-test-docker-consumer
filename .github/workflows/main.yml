@@ -22,6 +22,10 @@ jobs:
       #- name: Get the output
       #  run: echo "The time was ${{ steps.scan.outputs.scan-result }}"
       
+      - id: scan-result
+        run: echo "::set-output name=scan-result::result.sarif"
+        shell: bash
+      
       - name: upload result
         uses: github/codeql-action/upload-sarif@v2
         with:
